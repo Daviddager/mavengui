@@ -1,0 +1,60 @@
+{% extends "arquetipo/base.html" %}
+
+{% block content %}
+<h1>Argumentos del proyecto</h1>
+	<form method = "post" >
+		<div class="fields">
+			{% csrf_token%}
+			{{ form.as_table }}
+		</div>
+		</br>
+		<div class="maven-arguments">
+			<div class="row">
+				<div class="operations">
+					<h1>Operaciones del proyecto</h1>
+					{% for f_form in operations_formset %}
+						<div class="operation-formset">
+							{{ f_form.as_table }}
+						</div>
+					{% endfor %}
+					{{ operations_formset.management_form }}
+				</div>
+
+				<div class="data">
+					<h1>Datos</h1>
+					{% for d_form in data_formset %}
+						<div class="data-formset">
+							<label> Número de Operacion</label>
+							{{ d_form.operacion }}<br/>
+							<label> Tipo de Operación </label>
+							{{ d_form.mensaje }}
+							<label>Id Dato</label>
+							{{ d_form.id_dato }}
+							<label>Tipo</label>
+							{{ d_form.tipo }}
+							<!-- {{ d_form.as_table }} -->
+						</div>
+					{% endfor %}
+					{{ data_formset.management_form }}
+				</div>
+		</div>
+	</div>
+	</br>
+		<button types='submit' value='generate'>Generar</button>
+	</form>
+{% load static %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="{% static 'resources/js/jquery.formset.js' %}"></script>
+<script>
+	$('.operation-formset').formset({
+		addText: 'Agregar una operación',
+		deleteText: 'Eliminar',
+		prefix: 'operations'
+	});
+	$('.data-formset').formset({
+		addText: 'Agregar un dato',
+		deleteText: 'Eliminar',
+		prefix: 'datas'
+	});
+	</script>
+{% endblock %}
