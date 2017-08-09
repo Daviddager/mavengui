@@ -1,0 +1,23 @@
+#DOCKERFILE
+
+# Lightweigt linux OS 
+FROM alpine:edge
+
+# Install python and JAVA
+RUN apk add --update py2-pip && \
+apk --update add openjdk7-jre
+
+# Copy the requirement file
+COPY requirements.txt /usr/src/app
+
+RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
+
+# Copy project
+COPY  mavengui /usr/src/app
+
+# Expose port 8080 to allow communication to/form server
+EXPOSE 8080
+
+CMD python manage-py runserver
+
+# done
