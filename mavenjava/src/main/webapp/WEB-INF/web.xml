@@ -8,7 +8,8 @@
 
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
-        <servlet-class>org.example.HelloServlet</servlet-class>
+        <!--<servlet-class>org.example.HelloServlet</servlet-class>-->
+        <servlet-file>index.jsp</servlet-file>
     </servlet>
 
     <servlet-mapping>

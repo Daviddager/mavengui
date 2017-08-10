@@ -1,4 +1,4 @@
-package org.example;
+package com.telefonica;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.ServletException;
