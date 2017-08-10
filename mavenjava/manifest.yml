@@ -3,5 +3,5 @@ applications:
 - name: hello-java
   memory: 256M
   instances: 1
-  host: helloworld-java
+  host: javatel
   path: target/hello-java.war
