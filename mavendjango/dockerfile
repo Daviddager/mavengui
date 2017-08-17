@@ -19,7 +19,7 @@ RUN apk update && \
 
 RUN pip install -r requirements.txt 
 
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+ENV JAVA_HOME /opt/jdk
 
 ENV MAVEN_VERSION 3.3.9
 ENV MAVEN_HOME /usr/lib/maven
