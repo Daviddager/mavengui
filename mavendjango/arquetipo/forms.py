@@ -2,13 +2,13 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.forms.formsets import BaseFormSet
 
-# datos básicos del proyecto Arquetype, artifact, etc
+# datos basicos del proyecto Arquetype, artifact, etc
 class FieldsForm( forms.Form ):
     organizacion = forms.CharField(
             required = True,
             max_length = 20,
             widget = forms.TextInput( attrs = {
-                'placeholder':'Nombre de la Organización',
+                'placeholder':'Nombre de la Organizacion',
                 } ),
             )
     proyecto = forms.CharField(
@@ -29,7 +29,7 @@ class FieldsForm( forms.Form ):
             required = True ,
             max_length = 20,
             widget = forms.TextInput( attrs = {
-                'placeholder':'Dirección del dominio',
+                'placeholder':'Direccion del dominio',
                 } ),
             )
 # Operaciones
