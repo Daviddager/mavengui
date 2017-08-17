@@ -10,6 +10,7 @@ ENV PACKAGES="\
   uwsgi-python \
   supervisor \
   openjdk8 \
+  zip \
 "
 
 RUN apk update && \
