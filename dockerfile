@@ -19,7 +19,7 @@ RUN apk update && \
 
 RUN pip install -r requirements.txt 
 
-ENV JAVA_HOME /opt/jdk
+ENV JAVA_HOME /usr/lib/jvm/default-jvm
 
 ENV MAVEN_VERSION 3.3.9
 ENV MAVEN_HOME /usr/lib/maven
@@ -32,7 +32,9 @@ RUN apk --no-cache add --virtual build-dependencies wget && \
     ln -s /usr/lib/maven/bin/mvn /usr/bin/mvn && \
     rm -rf /tmp/* && \
     apk del --purge build-dependencies 
-
+RUN cd archetype/ &&\
+    mvn install
+    
 EXPOSE 8000
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

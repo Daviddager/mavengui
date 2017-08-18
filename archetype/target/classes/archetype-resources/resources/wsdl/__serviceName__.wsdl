@@ -1,0 +1,76 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2016 SynTouch B.V.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<wsdl:definitions name="${serviceName}" targetNamespace="http://${nameSpace}/${artifactId}/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/${artifactId}/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://${nameSpace}/${artifactId}/" schemaLocation="../xsd/${serviceName}.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  #set( $chain = $fields )
+  #foreach($operation in $operations.split(" "))
+  <wsdl:message name="${operation}Request">
+    <wsdl:part element="tns:${operation}" name="parameters"/>
+  #foreach($field in $chain.split(" "))
+  #set( $strng = $field.split("-") )
+  #if( $strng.get(0) == $velocityCount )
+  #if( $strng.get(1) == 1 )
+    <wsdl:part name="${strng.get(2)}" type="${strng.get(3)}">
+  #end
+  #end
+  #end
+  </wsdl:message>
+  <wsdl:message name="${operation}Response">
+    <wsdl:part element="tns:${operation}Response" name="parameters"/>
+  #foreach($field in $fields.split(" "))
+  #set( $strng = $field.split("-") )
+  #if( $strng[0] == $velocityCount )
+  #if( $strng[1] == 2 )
+    <wsdl:part name="${strng[2]}" type="${strng[3]}">
+  #end
+  #end
+  #end
+  </wsdl:message>
+  #end
+
+   <wsdl:portType name="${serviceName}">
+	#foreach($operation in $operations.split(" "))
+    <wsdl:operation name="${operation}">
+      <wsdl:input message="tns:${operation}Request"/>
+      <wsdl:output message="tns:${operation}Response"/>
+    </wsdl:operation>
+	#end
+  </wsdl:portType>
+
+
+  <wsdl:binding name="${serviceName}SOAP" type="tns:${serviceName}">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+	#foreach($operation in $operations.split(" "))
+    <wsdl:operation name="${operation}">
+      <soap:operation soapAction="http://${nameSpace}/${artifactId}/${operation}"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+	#end
+  </wsdl:binding>
+</wsdl:definitions>

@@ -4,81 +4,81 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-ALLOWED_HOSTS	../mavendjango/osb11/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
-AUTH_PASSWORD_VALIDATORS	../mavendjango/osb11/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:88
-ArquetipoConfig	../mavendjango/arquetipo/apps.py	/^class ArquetipoConfig(AppConfig):$/;"	kind:class	line:4
-BASE_DIR	../mavendjango/osb11/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
-CHOICES	../mavendjango/arquetipo/forms.py	/^    CHOICES = ( ( '1', 'Request' ), ( '2', 'Response' ) )$/;"	kind:variable	line:54
-DATABASES	../mavendjango/osb11/settings.py	/^DATABASES = {$/;"	kind:variable	line:77
-DEBUG	../mavendjango/osb11/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
-DataTypesForm	../mavendjango/arquetipo/forms.py	/^class DataTypesForm( forms.Form ):$/;"	kind:class	line:45
-FieldsForm	../mavendjango/arquetipo/forms.py	/^class FieldsForm( forms.Form ):$/;"	kind:class	line:6
-INSTALLED_APPS	../mavendjango/osb11/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
-LANGUAGE_CODE	../mavendjango/osb11/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:107
-MEDIA_ROOT	../mavendjango/osb11/settings.py	/^MEDIA_ROOT = os.path.join( BASE_DIR, 'media\/' )$/;"	kind:variable	line:17
-MIDDLEWARE	../mavendjango/osb11/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
-OperationsForm	../mavendjango/arquetipo/forms.py	/^class OperationsForm( forms.Form ):$/;"	kind:class	line:36
-ROOT_URLCONF	../mavendjango/osb11/settings.py	/^ROOT_URLCONF = 'osb11.urls'$/;"	kind:variable	line:53
-STATIC_ROOT	../mavendjango/osb11/settings.py	/^STATIC_ROOT = '\/home\/drdagerm\/Documents\/Telefonica\/MavenArchetype\/osb11\/arquetipo\/static'$/;"	kind:variable	line:122
-STATIC_URL	../mavendjango/osb11/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:121
-TEMPLATES	../mavendjango/osb11/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:55
-TIME_ZONE	../mavendjango/osb11/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:109
-TYPES	../mavendjango/arquetipo/forms.py	/^    TYPES = ( ( 'integer', 'Integer' ),$/;"	kind:variable	line:68
-USE_I18N	../mavendjango/osb11/settings.py	/^USE_I18N = True$/;"	kind:variable	line:111
-USE_L10N	../mavendjango/osb11/settings.py	/^USE_L10N = True$/;"	kind:variable	line:113
-USE_TZ	../mavendjango/osb11/settings.py	/^USE_TZ = True$/;"	kind:variable	line:115
-WSGI_APPLICATION	../mavendjango/osb11/settings.py	/^WSGI_APPLICATION = 'osb11.wsgi.application'$/;"	kind:variable	line:71
-__init__.py	../mavendjango/arquetipo/__init__.py	1;"	kind:file	line:1
-__init__.py	../mavendjango/arquetipo/migrations/__init__.py	1;"	kind:file	line:1
-__init__.py	../mavendjango/osb11/__init__.py	1;"	kind:file	line:1
-admin.py	../mavendjango/arquetipo/admin.py	1;"	kind:file	line:1
-app_name	../mavendjango/arquetipo/urls.py	/^app_name = 'arquetipo'$/;"	kind:variable	line:5
-application	../mavendjango/osb11/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
-apps.py	../mavendjango/arquetipo/apps.py	1;"	kind:file	line:1
-choices	../mavendjango/arquetipo/forms.py	/^            choices = CHOICES,$/;"	kind:variable	line:58
-choices	../mavendjango/arquetipo/forms.py	/^            choices = TYPES,$/;"	kind:variable	line:81
-dominio	../mavendjango/arquetipo/forms.py	/^    dominio = forms.CharField($/;"	kind:variable	line:28
-forms.py	../mavendjango/arquetipo/forms.py	1;"	kind:file	line:1
-id_dato	../mavendjango/arquetipo/forms.py	/^    id_dato = forms.CharField($/;"	kind:variable	line:61
-index	../mavendjango/arquetipo/views.py	/^def index( request ):$/;"	kind:function	line:14
-manage.py	../mavendjango/manage.py	1;"	kind:file	line:1
-max_length	../mavendjango/arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:16
-max_length	../mavendjango/arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:23
-max_length	../mavendjango/arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:30
-max_length	../mavendjango/arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:39
-max_length	../mavendjango/arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:63
-max_length	../mavendjango/arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:9
-mensaje	../mavendjango/arquetipo/forms.py	/^    mensaje = forms.ChoiceField($/;"	kind:variable	line:55
-models.py	../mavendjango/arquetipo/models.py	1;"	kind:file	line:1
-name	../mavendjango/arquetipo/apps.py	/^    name = 'arquetipo'$/;"	kind:variable	line:5
-operacion	../mavendjango/arquetipo/forms.py	/^    operacion = forms.CharField($/;"	kind:variable	line:37
-operacion	../mavendjango/arquetipo/forms.py	/^    operacion = forms.CharField($/;"	kind:variable	line:46
-organizacion	../mavendjango/arquetipo/forms.py	/^    organizacion = forms.CharField($/;"	kind:variable	line:7
-proyecto	../mavendjango/arquetipo/forms.py	/^    proyecto = forms.CharField($/;"	kind:variable	line:14
-required	../mavendjango/arquetipo/forms.py	/^            required = True ,$/;"	kind:variable	line:22
-required	../mavendjango/arquetipo/forms.py	/^            required = True ,$/;"	kind:variable	line:29
-required	../mavendjango/arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:15
-required	../mavendjango/arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:38
-required	../mavendjango/arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:47
-required	../mavendjango/arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:56
-required	../mavendjango/arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:62
-required	../mavendjango/arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:8
-required	../mavendjango/arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:80
-servicio	../mavendjango/arquetipo/forms.py	/^    servicio = forms.CharField($/;"	kind:variable	line:21
-settings.py	../mavendjango/osb11/settings.py	1;"	kind:file	line:1
-tests.py	../mavendjango/arquetipo/tests.py	1;"	kind:file	line:1
-tipo	../mavendjango/arquetipo/forms.py	/^    tipo = forms.ChoiceField($/;"	kind:variable	line:79
-urlpatterns	../mavendjango/arquetipo/urls.py	/^urlpatterns = [$/;"	kind:variable	line:7
-urlpatterns	../mavendjango/osb11/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
-urls.py	../mavendjango/arquetipo/urls.py	1;"	kind:file	line:1
-urls.py	../mavendjango/osb11/urls.py	1;"	kind:file	line:1
-views.py	../mavendjango/arquetipo/views.py	1;"	kind:file	line:1
-widget	../mavendjango/arquetipo/forms.py	/^            widget = forms.RadioSelect,$/;"	kind:variable	line:57
-widget	../mavendjango/arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:10
-widget	../mavendjango/arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:17
-widget	../mavendjango/arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:24
-widget	../mavendjango/arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:31
-widget	../mavendjango/arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:40
-widget	../mavendjango/arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:48
-widget	../mavendjango/arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:64
-wsgi.py	../mavendjango/osb11/wsgi.py	1;"	kind:file	line:1
+ALLOWED_HOSTS	../osb11/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
+AUTH_PASSWORD_VALIDATORS	../osb11/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:88
+ArquetipoConfig	../arquetipo/apps.py	/^class ArquetipoConfig(AppConfig):$/;"	kind:class	line:4
+BASE_DIR	../osb11/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
+CHOICES	../arquetipo/forms.py	/^    CHOICES = ( ( '1', 'Request' ), ( '2', 'Response' ) )$/;"	kind:variable	line:54
+DATABASES	../osb11/settings.py	/^DATABASES = {$/;"	kind:variable	line:77
+DEBUG	../osb11/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
+DataTypesForm	../arquetipo/forms.py	/^class DataTypesForm( forms.Form ):$/;"	kind:class	line:45
+FieldsForm	../arquetipo/forms.py	/^class FieldsForm( forms.Form ):$/;"	kind:class	line:6
+INSTALLED_APPS	../osb11/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
+LANGUAGE_CODE	../osb11/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:107
+MEDIA_ROOT	../osb11/settings.py	/^MEDIA_ROOT = os.path.join( BASE_DIR, 'media\/' )$/;"	kind:variable	line:17
+MIDDLEWARE	../osb11/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
+OperationsForm	../arquetipo/forms.py	/^class OperationsForm( forms.Form ):$/;"	kind:class	line:36
+ROOT_URLCONF	../osb11/settings.py	/^ROOT_URLCONF = 'osb11.urls'$/;"	kind:variable	line:53
+STATIC_ROOT	../osb11/settings.py	/^STATIC_ROOT = '\/home\/drdagerm\/Documents\/Telefonica\/MavenArchetype\/osb11\/arquetipo\/static'$/;"	kind:variable	line:122
+STATIC_URL	../osb11/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:121
+TEMPLATES	../osb11/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:55
+TIME_ZONE	../osb11/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:109
+TYPES	../arquetipo/forms.py	/^    TYPES = ( ( 'integer', 'Integer' ),$/;"	kind:variable	line:68
+USE_I18N	../osb11/settings.py	/^USE_I18N = True$/;"	kind:variable	line:111
+USE_L10N	../osb11/settings.py	/^USE_L10N = True$/;"	kind:variable	line:113
+USE_TZ	../osb11/settings.py	/^USE_TZ = True$/;"	kind:variable	line:115
+WSGI_APPLICATION	../osb11/settings.py	/^WSGI_APPLICATION = 'osb11.wsgi.application'$/;"	kind:variable	line:71
+__init__.py	../arquetipo/__init__.py	1;"	kind:file	line:1
+__init__.py	../arquetipo/migrations/__init__.py	1;"	kind:file	line:1
+__init__.py	../osb11/__init__.py	1;"	kind:file	line:1
+admin.py	../arquetipo/admin.py	1;"	kind:file	line:1
+app_name	../arquetipo/urls.py	/^app_name = 'arquetipo'$/;"	kind:variable	line:5
+application	../osb11/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	../arquetipo/apps.py	1;"	kind:file	line:1
+choices	../arquetipo/forms.py	/^            choices = CHOICES,$/;"	kind:variable	line:58
+choices	../arquetipo/forms.py	/^            choices = TYPES,$/;"	kind:variable	line:81
+dominio	../arquetipo/forms.py	/^    dominio = forms.CharField($/;"	kind:variable	line:28
+forms.py	../arquetipo/forms.py	1;"	kind:file	line:1
+id_dato	../arquetipo/forms.py	/^    id_dato = forms.CharField($/;"	kind:variable	line:61
+index	../arquetipo/views.py	/^def index( request ):$/;"	kind:function	line:14
+manage.py	../manage.py	1;"	kind:file	line:1
+max_length	../arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:16
+max_length	../arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:23
+max_length	../arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:30
+max_length	../arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:39
+max_length	../arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:63
+max_length	../arquetipo/forms.py	/^            max_length = 20,$/;"	kind:variable	line:9
+mensaje	../arquetipo/forms.py	/^    mensaje = forms.ChoiceField($/;"	kind:variable	line:55
+models.py	../arquetipo/models.py	1;"	kind:file	line:1
+name	../arquetipo/apps.py	/^    name = 'arquetipo'$/;"	kind:variable	line:5
+operacion	../arquetipo/forms.py	/^    operacion = forms.CharField($/;"	kind:variable	line:37
+operacion	../arquetipo/forms.py	/^    operacion = forms.CharField($/;"	kind:variable	line:46
+organizacion	../arquetipo/forms.py	/^    organizacion = forms.CharField($/;"	kind:variable	line:7
+proyecto	../arquetipo/forms.py	/^    proyecto = forms.CharField($/;"	kind:variable	line:14
+required	../arquetipo/forms.py	/^            required = True ,$/;"	kind:variable	line:22
+required	../arquetipo/forms.py	/^            required = True ,$/;"	kind:variable	line:29
+required	../arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:15
+required	../arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:38
+required	../arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:47
+required	../arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:56
+required	../arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:62
+required	../arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:8
+required	../arquetipo/forms.py	/^            required = True,$/;"	kind:variable	line:80
+servicio	../arquetipo/forms.py	/^    servicio = forms.CharField($/;"	kind:variable	line:21
+settings.py	../osb11/settings.py	1;"	kind:file	line:1
+tests.py	../arquetipo/tests.py	1;"	kind:file	line:1
+tipo	../arquetipo/forms.py	/^    tipo = forms.ChoiceField($/;"	kind:variable	line:79
+urlpatterns	../arquetipo/urls.py	/^urlpatterns = [$/;"	kind:variable	line:7
+urlpatterns	../osb11/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
+urls.py	../arquetipo/urls.py	1;"	kind:file	line:1
+urls.py	../osb11/urls.py	1;"	kind:file	line:1
+views.py	../arquetipo/views.py	1;"	kind:file	line:1
+widget	../arquetipo/forms.py	/^            widget = forms.RadioSelect,$/;"	kind:variable	line:57
+widget	../arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:10
+widget	../arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:17
+widget	../arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:24
+widget	../arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:31
+widget	../arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:40
+widget	../arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:48
+widget	../arquetipo/forms.py	/^            widget = forms.TextInput( attrs = {$/;"	kind:variable	line:64
+wsgi.py	../osb11/wsgi.py	1;"	kind:file	line:1

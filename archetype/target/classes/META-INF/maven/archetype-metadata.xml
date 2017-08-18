@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="MavenArchetypeService"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+  <requiredProperties>
+    <requiredProperty key="serviceName"/>
+    <requiredProperty key="operations"/>
+    <requiredProperty key="nameSpace"/>
+    <requiredProperty key="fields" />
+  </requiredProperties>
+
+  <fileSets>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>resources/jca</directory>
+      <includes>
+        <include>**/*.jca</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>resources/xslt</directory>
+      <includes>
+        <include>**/*.xsl</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>resources/schemas</directory>
+      <includes>
+        <include>**/*.xsd</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>resources/mq</directory>
+      <includes>
+        <include>**/*.mqc</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>resources/splitJoin</directory>
+      <includes>
+        <include>**/*.flow</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>resources/xquery</directory>
+      <includes>
+        <include>**/*.xq</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>.settings</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>resources/jar</directory>
+      <includes>
+        <include>**/*.jar</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>proxy-service</directory>
+      <includes>
+        <include>**/*.proxy</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>resources/xsd</directory>
+      <includes>
+        <include>**/*.xsd</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>resources/wsdl</directory>
+      <includes>
+        <include>**/*.wsdl</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>business-service</directory>
+      <includes>
+        <include>**/*.biz</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>.settings</directory>
+      <includes>
+        <include>**/*.component</include>
+        <include>**/*.prefs</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>.project</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</archetype-descriptor>

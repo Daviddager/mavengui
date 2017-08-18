@@ -1,0 +1,168 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+#set( $majorVersion = $artifactId.replace($serviceName,"").replace("_","") )
+#set( $name = $serviceName.replace("Service","") )
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config">
+  <ser:coreEntry isProxy="true" isEnabled="true">
+    <ser:binding type="SOAP" isSoap12="false" xsi:type="con5:SoapBindingType" xmlns:con5="http://www.bea.com/wli/sb/services/bindings/config">
+      <con5:wsdl ref="${artifactId}/resources/wsdl/${serviceName}"/>
+      <con5:binding>
+        <con5:name>${serviceName}SOAP</con5:name>
+        <con5:namespace>http://${nameSpace}/${artifactId}/</con5:namespace>
+      </con5:binding>
+      <con5:selector type="SOAP body"/>
+    </ser:binding>
+    <ser:monitoring isEnabled="false">
+      <ser:aggregationInterval>10</ser:aggregationInterval>
+      <ser:pipelineMonitoringLevel>Pipeline</ser:pipelineMonitoringLevel>
+    </ser:monitoring>
+    <ser:reporting>true</ser:reporting>
+    <ser:logging isEnabled="true">
+      <ser:logLevel>debug</ser:logLevel>
+    </ser:logging>
+    <ser:sla-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:sla-alerting>
+    <ser:pipeline-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:pipeline-alerting>
+    <ser:ws-policy>
+      <ser:binding-mode>wsdl-policy-attachments</ser:binding-mode>
+    </ser:ws-policy>
+  </ser:coreEntry>
+  <ser:endpointConfig>
+    <tran:provider-id>http</tran:provider-id>
+    <tran:inbound>true</tran:inbound>
+    <tran:URI>
+      <env:value>/${artifactId}/${majorVersion}</env:value>
+    </tran:URI>
+    <tran:inbound-properties/>
+    <tran:all-headers>false</tran:all-headers>
+    <tran:provider-specific>
+      <http:inbound-properties/>
+    </tran:provider-specific>
+  </ser:endpointConfig>
+  <ser:router errorHandler="_onErrorHandler-6838065459772875562--48275a7.152591420ee.-7ff4">
+    <con:pipeline type="error" name="_onErrorHandler-6838065459772875562--48275a7.152591420ee.-7ff4">
+      <con:stage name="ErrorLog">
+        <con:context/>
+        <con:actions>
+          <con1:ifThenElse>
+            <con2:id>_ActionId-6838065459772875562--48275a7.152591420ee.-7eef</con2:id>
+            <con1:case>
+              <con1:condition>
+                <con2:xqueryText>$fault/ctx:errorCode='404'</con2:xqueryText>
+              </con1:condition>
+              <con1:actions>
+                <con3:log>
+                  <con2:id>_ActionId-6838065459772875562--48275a7.152591420ee.-7edc</con2:id>
+                  <con3:logLevel>debug</con3:logLevel>
+                  <con3:expr>
+                    <con2:xqueryText>concat('Unknown operation ',${symbol_dollar}operation,' called')</con2:xqueryText>
+                  </con3:expr>
+                </con3:log>
+              </con1:actions>
+            </con1:case>
+            <con1:default>
+              <con3:log>
+                <con2:id>_ActionId-6838065459772875562--48275a7.152591420ee.-7ec5</con2:id>
+                <con3:logLevel>warning</con3:logLevel>
+                <con3:expr>
+                  <con2:xqueryText>concat('Fault in ',${symbol_dollar}operation,': ',fn-bea:serialize($fault))</con2:xqueryText>
+                </con3:expr>
+              </con3:log>
+            </con1:default>
+          </con1:ifThenElse>
+          <con2:reply isError="true">
+            <con2:id>_ActionId-6838065459772875562--48275a7.152591420ee.-7eaf</con2:id>
+          </con2:reply>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+	#foreach($operation in $operations.split(" "))
+    <con:pipeline type="request" name="${operation}PipelinePairNode_request">
+      <con:stage name="${operation}RequestLog">
+        <con:context/>
+        <con:actions>
+          <con3:log>
+            <con2:id>_ActionId-6838065459772875562--48275a7.152591420ee.-7f5f</con2:id>
+            <con3:logLevel>debug</con3:logLevel>
+            <con3:expr>
+              <con2:xqueryText>concat('Received request for ',${symbol_dollar}operation,': ',fn-bea:serialize($body))</con2:xqueryText>
+            </con3:expr>
+          </con3:log>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+
+    <con:pipeline type="response" name="${operation}PipelinePairNode_response">
+      <con:stage name="${operation}ResponseLog">
+        <con:context/>
+        <con:actions>
+          <con3:log>
+            <con2:id>_ActionId-6838065459772875562--48275a7.152591420ee.-7f82</con2:id>
+            <con3:logLevel>debug</con3:logLevel>
+            <con3:expr>
+              <con2:xqueryText>concat('Received response for ',${symbol_dollar}operation,': ',fn-bea:serialize($body))</con2:xqueryText>
+            </con3:expr>
+          </con3:log>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+	#end
+    <con:pipeline type="request" name="DefaultPipelinePairNode_request">
+      <con:stage name="UnknownOperation">
+        <con:context/>
+        <con:actions>
+          <con1:Error>
+            <con2:id>_ActionId-6838065459772875562--48275a7.152591420ee.-7fc7</con2:id>
+            <con1:errCode>404</con1:errCode>
+            <con1:message>Unknown operation</con1:message>
+          </con1:Error>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="response" name="DefaultPipelinePairNode_response"/>
+    <con:flow>
+      <con:branch-node type="operation" name="${name}BranchNode">
+        <con:context/>
+        <con:branch-table>
+		 #foreach($operation in $operations.split(" "))
+          <con:branch name="${operation}">
+            <con:operator>equals</con:operator>
+            <con:value/>
+            <con:flow>
+              <con:pipeline-node name="${operation}PipelinePairNode">
+                <con:request>${operation}PipelinePairNode_request</con:request>
+                <con:response>${operation}PipelinePairNode_response</con:response>
+              </con:pipeline-node>
+              <con:route-node name="${operation}RouteNode">
+                <con:context/>
+                <con:actions>
+                  <con4:route>
+                    <con2:id>_ActionId-6838065459772875562--48275a7.152591420ee.-7fad</con2:id>
+                    <con4:service ref=" ${artifactId}/business-service/${serviceName}BS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                    <con4:operation>NewOperation</con4:operation>
+                    <con4:outboundTransform/>
+                    <con4:responseTransform/>
+                  </con4:route>
+                </con:actions>
+              </con:route-node>
+            </con:flow>
+          </con:branch>
+		  #end
+          <con:default-branch>
+            <con:flow>
+              <con:pipeline-node name="DefaultPipelinePairNode">
+                <con:request>DefaultPipelinePairNode_request</con:request>
+                <con:response>DefaultPipelinePairNode_response</con:response>
+              </con:pipeline-node>
+            </con:flow>
+          </con:default-branch>
+        </con:branch-table>
+      </con:branch-node>
+    </con:flow>
+  </ser:router>
+</xml-fragment>
